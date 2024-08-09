@@ -19,7 +19,7 @@ nascimento date,
 telCelular char(10),
 primary key(codFunc));
 
-create table tbFornecedores
+create table tbFornecedores(
 codForn int not null auto_increment,
 nome varchar(100) not null,
 email varchar(100) not null,
@@ -48,4 +48,6 @@ foreign key(codForn) references tbFornecedores(codForn));
 
 --visualizando a estrutura das tabelas
 desc tbFuncionarios;
+desc tbFornecedores;
 desc tbUsuarios;
+desc tbProdutos;
