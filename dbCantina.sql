@@ -23,7 +23,7 @@ create table tbFornecedores(
 codForn int not null auto_increment,
 nome varchar(100) not null,
 email varchar(100) not null,
-cnpj char(17) not null unique,
+cnpj char(18) not null unique,
 primary key(codForn));
 
 create table tbClientes(
@@ -53,6 +53,8 @@ codForn int not null,
 primary key(codProd),
 foreign key(codForn) references tbFornecedores(codForn));
 
+
+
 create table tbVendas(
 codVenda int not null auto_increment,
 dataVenda date,
@@ -74,3 +76,31 @@ desc tbClientes;
 desc tbUsuarios;
 desc tbProdutos;
 desc tbVendas;
+
+-- inserindo registros nas tabelas
+
+insert into tbFuncionarios(nome,email,cpf,sexo,salario,nascimento,telCelular)values('Jose Firmino','jfirmino@gmail.com','157.171.157-17','M',2740.68,'1990/07/31','93628-0669');
+insert into tbFuncionarios(nome,email,cpf,sexo,salario,nascimento,telCelular)values('Maria Estela','estelinha@gmail.com','254.987.158-23','F',3532.76,'1993/12/15','95588-2500');
+
+insert into tbFornecedores(nome,email,cnpj)values('Kalunga','kalunga@gmail.com','71.123.456/0001-88');
+insert into tbFornecedores(nome,email,cnpj)values('Ferrarez','ferrarez@gmail.com','19.573.489/0001-17');
+
+insert into tbClientes(nome,email,telCelular)values('Manoel Pereira','manoelpereira@gmail.com','95574-1827');
+insert into tbClientes(nome,email,telCelular)values('Ubiraci Ramos','ubiramos@gmail.com','93351-1957');
+insert into tbClientes(nome,email,telCelular)values('Cecilia Maria','cecimaria@gmail.com','95971-5312');
+
+insert into tbUsuarios(nome,senha,codFunc)values('jose.firmino','123456',1);
+insert into tbUsuarios(nome,senha,codFunc)values('maria.estela','121212',2);
+
+insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,horaEntrada,codForn)values('Caderno Brochura',500,1000.00,'2050/18/12','2024/08/16','19:50:00',1);
+insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,horaEntrada,codForn)values('Caneta Bic',800,800.00,'2027/10/07','2024/08/16','19:53:00',2);
+insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,horaEntrada,codForn)values('Lapis Preto',2000,500.00,'2070/01/01','2024/08/16','19:54:00',2);
+insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,horaEntrada,codForn)values('Borracha Branca',700,200.00,'2030/05/08','2024/08/16','19:55:00',1);	
+
+-- visualizando os registros das tabelas
+
+select * from tbFuncionarios;
+select * from tbFornecedores;
+select * from tbClientes;
+select * from tbUsuarios;
+select * from tbProdutos;
