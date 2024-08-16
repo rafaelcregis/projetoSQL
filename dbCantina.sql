@@ -53,8 +53,6 @@ codForn int not null,
 primary key(codProd),
 foreign key(codForn) references tbFornecedores(codForn));
 
-
-
 create table tbVendas(
 codVenda int not null auto_increment,
 dataVenda date,
@@ -97,6 +95,8 @@ insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,horaEntra
 insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,horaEntrada,codForn)values('Lapis Preto',2000,500.00,'2070/01/01','2024/08/16','19:54:00',2);
 insert into tbProdutos(descricao,quantidade,valor,validade,dataEntrada,horaEntrada,codForn)values('Borracha Branca',700,200.00,'2030/05/08','2024/08/16','19:55:00',1);	
 
+insert into tbVendas(dataVenda,horaVenda,quantidade,codUsu,codCli,codProd)values('2024/08/16','19:57:00',10,1,2,4);
+
 -- visualizando os registros das tabelas
 
 select * from tbFuncionarios;
@@ -104,3 +104,4 @@ select * from tbFornecedores;
 select * from tbClientes;
 select * from tbUsuarios;
 select * from tbProdutos;
+select * from tbVendas;
